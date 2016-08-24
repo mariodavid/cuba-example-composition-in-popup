@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.cecip.web.order.OrderEdit"
+        datasource="orderDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.cecip.web.order">
+    <dsContext>
+        <datasource id="orderDs"
+                    class="com.company.cecip.entity.Order"
+                    view="order-view">
+            <collectionDatasource id="orderLinesDs"
+                                  property="orderLines"/>
+        </datasource>
+    </dsContext>
+
+    <actions>
+        <action id="orderLinesEditAction" invoke="orderLinesEdit" caption="Edit Order Lines in Dialog"/>
+    </actions>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="orderDs">
+            <column width="250px">
+                <field id="orderDate"/>
+                <field id="customer"/>
+            </column>
+        </fieldGroup>
+        <button id="orderLinesEditBtn" action="orderLinesEditAction" />
+        <groupBox id="orderLinesBox"
+                  caption="msg://com.company.cecip.entity/Order.orderLines">
+            <table id="orderLinesTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="product"/>
+                    <column id="price"/>
+                </columns>
+                <rows datasource="orderLinesDs"/>
+                <buttonsPanel>
+                    <button action="orderLinesTable.create"/>
+                    <button action="orderLinesTable.edit"/>
+                    <button action="orderLinesTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

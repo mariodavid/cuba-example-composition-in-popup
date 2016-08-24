@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/screens.xml"/>
+    <screen id="cecip$Product.browse"
+            template="com/company/cecip/web/product/product-browse.xml"/>
+    <screen id="cecip$Product.edit"
+            template="com/company/cecip/web/product/product-edit.xml"/>
+    <screen id="cecip$OrderLine.edit"
+            template="com/company/cecip/web/orderline/order-line-edit.xml"/>
+    <screen id="cecip$Order.browse"
+            template="com/company/cecip/web/order/order-browse.xml"/>
+    <screen id="cecip$Order.edit"
+            template="com/company/cecip/web/order/order-edit.xml"/>
+    <screen id="cecip$Order-OrderLine.edit"
+            template="com/company/cecip/web/order/order-order-line-edit.xml"/>
+</screen-config>

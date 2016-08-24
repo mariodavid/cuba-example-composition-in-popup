@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ TODO Copyright
+  -->
+
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://com.company.cecip.entity/Order.orderLines"
+        class="com.company.cecip.web.order.OrderEdit"
+        datasource="orderDs"
+        focusComponent="orderLinesTable"
+        messagesPack="com.company.cecip.web.order">
+    <dsContext>
+        <datasource id="orderDs"
+                    class="com.company.cecip.entity.Order"
+                    view="order-view">
+            <collectionDatasource id="orderLinesDs"
+                                  property="orderLines"/>
+        </datasource>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+            <table id="orderLinesTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="product"/>
+                    <column id="price"/>
+                </columns>
+                <rows datasource="orderLinesDs"/>
+                <buttonsPanel>
+                    <button action="orderLinesTable.create"/>
+                    <button action="orderLinesTable.edit"/>
+                    <button action="orderLinesTable.remove"/>
+                </buttonsPanel>
+            </table>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
