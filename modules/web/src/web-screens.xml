@@ -13,4 +13,6 @@
             template="com/company/cecip/web/order/order-edit.xml"/>
     <screen id="cecip$Order-OrderLine.edit"
             template="com/company/cecip/web/order/order-order-line-edit.xml"/>
+    <screen id="order-lines-dialog"
+            template="com/company/cecip/web/order/order-lines-dialog.xml"/>
 </screen-config>
