@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://caption"
+        class="com.company.cecip.web.order.OrderLinesDialog"
+        messagesPack="com.company.cecip.web.order">
+    <layout spacing="true">
+        <hbox id="buttonsBox"
+              height="100%"
+              spacing="true">
+            <button id="createBtn"/>
+            <button id="editBtn"/>
+            <button id="removeBtn"/>
+            <button id="cancelBtn"
+                    caption="Close"
+                    invoke="onCloseBtnClick"/>
+        </hbox>
+        <vbox id="tableBox"/>
+    </layout>
+</window>
